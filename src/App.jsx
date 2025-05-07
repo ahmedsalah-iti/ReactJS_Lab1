@@ -1,11 +1,20 @@
-import './App.css'
-import myInfo from './info'
+// import './App.css'
+import Hero from "./components/Hero/Hero";
+import About from "./components/About/About";
+import Skills from './components/Skills/Skills';
+import Portfolio from './components/Portfolio/Portfolio';
+import Footer from './components/Footer/Footer';
 function App(){
   return (
     <>
-    <h1>{myInfo.name}</h1>
+    <Hero/>
+    <About/>
+    <Skills />
+    <Portfolio />
+    <Footer />
+
     </>
-  )
+  );
 }
 
 export default App;

@@ -1,10 +1,28 @@
 const myInfo = {
     name:"Ahmed Salah",
-    about:"test",
+    title:"backEnd Dev.",
+    email:"ahmedsalah.iti@gmail.com",
+    about:"You Know Who Am I .",
     skills:[
         {
             name:"php",
             percent:90,
+        },
+        {
+            name:"laravel",
+            percent:45,
+        },
+        {
+            name:"nodeJS",
+            percent:35,
+        },
+        {
+            name:"python",
+            percent:30,
+        },
+        {
+            name:"javaScript",
+            percent:30,
         },
         {
             name:"html",
@@ -35,6 +53,9 @@ const myInfo = {
         },        {
             name:"twitter",
             link:"https://www.twitter.com/"
+        },        {
+            name:"linkedin",
+            link:"https://www.linkedin.com/"
         },
     ]
 }

@@ -1,68 +1,652 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* ==========================================================================
+   Custom Tailwind UI Improvements for Modern 2025 Design
+   ========================================================================== */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+/* ==========================================================================
+   1. Global Resets and Base Styles
+   ========================================================================== */
+   *,
+   *::before,
+   *::after {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+   
+   html {
+     font-size: 16px;
+     scroll-behavior: smooth;
+   }
+   
+   body {
+     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+     line-height: 1.5;
+     color: #1f2937;
+     background-color: #f8fafc;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+   }
+   
+   a {
+     text-decoration: none;
+     color: #2563eb;
+     transition: color 0.2s ease;
+   }
+   
+   a:hover {
+     color: #1e40af;
+   }
+   
+   /* ==========================================================================
+      2. Custom Typography
+      ========================================================================== */
+   h1, .h1 {
+     font-size: 3rem;
+     font-weight: 800;
+     line-height: 1.2;
+     letter-spacing: -0.025em;
+     color: #111827;
+   }
+   
+   h2, .h2 {
+     font-size: 2.25rem;
+     font-weight: 700;
+     line-height: 1.3;
+     letter-spacing: -0.02em;
+     color: #111827;
+   }
+   
+   h3, .h3 {
+     font-size: 1.875rem;
+     font-weight: 600;
+     line-height: 1.4;
+     color: #1f2937;
+   }
+   
+   h4, .h4 {
+     font-size: 1.5rem;
+     font-weight: 600;
+     line-height: 1.5;
+     color: #1f2937;
+   }
+   
+   h5, .h5 {
+     font-size: 1.25rem;
+     font-weight: 500;
+     line-height: 1.6;
+     color: #374151;
+   }
+   
+   h6, .h6 {
+     font-size: 1.125rem;
+     font-weight: 500;
+     line-height: 1.7;
+     color: #374151;
+   }
+   
+   .text-display {
+     font-size: 4rem;
+     font-weight: 900;
+     line-height: 1.1;
+     letter-spacing: -0.03em;
+     color: #111827;
+   }
+   
+   .text-lead {
+     font-size: 1.25rem;
+     font-weight: 400;
+     line-height: 1.8;
+     color: #4b5563;
+   }
+   
+   /* Responsive Typography */
+   @media (max-width: 640px) {
+     h1, .h1 { font-size: 2.25rem; }
+     h2, .h2 { font-size: 1.875rem; }
+     h3, .h3 { font-size: 1.5rem; }
+     .text-display { font-size: 3rem; }
+   }
+   
+   /* ==========================================================================
+      3. Custom Spacing Utilities
+      ========================================================================== */
+   .spacing-tight { letter-spacing: -0.05em; }
+   .spacing-loose { letter-spacing: 0.05em; }
+   
+   .margin-auto { margin: auto; }
+   .margin-x-auto { margin-left: auto; margin-right: auto; }
+   
+   .padding-safe { padding: 1rem; }
+   .padding-cozy { padding: 2rem; }
+   .padding-spacious { padding: 4rem; }
+   
+   /* Custom gap utilities */
+   .gap-xs { gap: 0.25rem; }
+   .gap-sm { gap: 0.5rem; }
+   .gap-md { gap: 1rem; }
+   .gap-lg { gap: 2rem; }
+   .gap-xl { gap: 4rem; }
+   
+   /* ==========================================================================
+      4. Shadows and Effects
+      ========================================================================== */
+   .shadow-soft {
+     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+   }
+   
+   .shadow-deep {
+     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+   }
+   
+   .shadow-glow {
+     box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+   }
+   
+   .neumorphic {
+     background: #f8fafc;
+     box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1), -8px -8px 16px rgba(255, 255, 255, 0.7);
+     border-radius: 1rem;
+   }
+   
+   .glass {
+     background: rgba(255, 255, 255, 0.1);
+     backdrop-filter: blur(10px);
+     border: 1px solid rgba(255, 255, 255, 0.2);
+     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+   }
+   
+   /* ==========================================================================
+      5. Animations and Transitions
+      ========================================================================== */
+   @keyframes fadeIn {
+     from { opacity: 0; }
+     to { opacity: 1; }
+   }
+   
+   @keyframes slideUp {
+     from { transform: translateY(20px); opacity: 0; }
+     to { transform: translateY(0); opacity: 1; }
+   }
+   
+   @keyframes pulseGlow {
+     0%, 100% { box-shadow: 0 0 10px rgba(59, 130, 246, 0.3); }
+     50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+   }
+   
+   .fade-in { animation: fadeIn 0.5s ease-out; }
+   .slide-up { animation: slideUp 0.6s ease-out; }
+   .pulse-glow { animation: pulseGlow 2s ease-in-out infinite; }
+   
+   .transition-smooth {
+     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+   }
+   
+   /* ==========================================================================
+      6. Button Components
+      ========================================================================== */
+   .btn {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     padding: 0.75rem 1.5rem;
+     font-size: 1rem;
+     font-weight: 500;
+     border-radius: 0.5rem;
+     cursor: pointer;
+     transition: all 0.3s ease;
+   }
+   
+   .btn-primary {
+     background: linear-gradient(135deg, #2563eb, #3b82f6);
+     color: #ffffff;
+     border: none;
+   }
+   
+   .btn-primary:hover {
+     background: linear-gradient(135deg, #1e40af, #2563eb);
+     box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+   }
+   
+   .btn-primary:focus {
+     outline: none;
+     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+   }
+   
+   .btn-secondary {
+     background: #e5e7eb;
+     color: #1f2937;
+     border: 1px solid #d1d5db;
+   }
+   
+   .btn-secondary:hover {
+     background: #d1d5db;
+     color: #111827;
+   }
+   
+   .btn-outline {
+     background: transparent;
+     border: 2px solid #2563eb;
+     color: #2563eb;
+   }
+   
+   .btn-outline:hover {
+     background: #2563eb;
+     color: #ffffff;
+   }
+   
+   .btn-sm { padding: 0.5rem 1rem; font-size: 0.875rem; }
+   .btn-lg { padding: 1rem 2rem; font-size: 1.125rem; }
+   
+   .btn-disabled {
+     opacity: 0.5;
+     cursor: not-allowed;
+     pointer-events: none;
+   }
+   
+   /* ==========================================================================
+      7. Card Components
+      ========================================================================== */
+   .card {
+     background: #ffffff;
+     border-radius: 1rem;
+     overflow: hidden;
+     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+   
+   .card:hover {
+     transform: translateY(-4px);
+     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+   }
+   
+   .card-header {
+     padding: 1.5rem;
+     border-bottom: 1px solid #e5e7eb;
+   }
+   
+   .card-body {
+     padding: 1.5rem;
+   }
+   
+   .card-footer {
+     padding: 1.5rem;
+     border-top: 1px solid #e5e7eb;
+   }
+   
+   .card-glass {
+     background: rgba(255, 255, 255, 0.1);
+     backdrop-filter: blur(10px);
+     border: 1px solid rgba(255, 255, 255, 0.2);
+   }
+   
+   /* ==========================================================================
+      8. Form Components
+      ========================================================================== */
+   .form-group {
+     margin-bottom: 1.5rem;
+   }
+   
+   .form-label {
+     display: block;
+     font-size: 0.875rem;
+     font-weight: 500;
+     color: #374151;
+     margin-bottom: 0.5rem;
+   }
+   
+   .form-input {
+     width: 100%;
+     padding: 0.75rem 1rem;
+     font-size: 1rem;
+     border: 1px solid #d1d5db;
+     border-radius: 0.5rem;
+     background: #ffffff;
+     transition: border-color 0.2s ease, box-shadow 0.2s ease;
+   }
+   
+   .form-input:focus {
+     outline: none;
+     border-color: #2563eb;
+     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+   }
+   
+   .form-input::placeholder {
+     color: #9ca3af;
+   }
+   
+   .form-input-error {
+     border-color: #ef4444;
+   }
+   
+   .form-error {
+     color: #ef4444;
+     font-size: 0.75rem;
+     margin-top: 0.25rem;
+   }
+   
+   .form-select {
+     appearance: none;
+     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+     background-position: right 0.5rem center;
+     background-repeat: no-repeat;
+     background-size: 1.5em;
+     padding-right: 2.5rem;
+   }
+   
+   /* ==========================================================================
+      9. Modal Components
+      ========================================================================== */
+   .modal {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.5);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     z-index: 1000;
+   }
+   
+   .modal-content {
+     background: #ffffff;
+     border-radius: 1rem;
+     max-width: 32rem;
+     width: 100%;
+     padding: 2rem;
+     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+     animation: slideUp 0.3s ease-out;
+   }
+   
+   .modal-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-bottom: 1.5rem;
+   }
+   
+   .modal-close {
+     background: none;
+     border: none;
+     font-size: 1.25rem;
+     color: #6b7280;
+     cursor: pointer;
+   }
+   
+   .modal-close:hover {
+     color: #1f2937;
+   }
+   
+   /* ==========================================================================
+      10. Navigation Components
+      ========================================================================== */
+   .nav {
+     display: flex;
+     align-items: center;
+     padding: 1rem 2rem;
+     background: #ffffff;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+   }
+   
+   .nav-item {
+     padding: 0.5rem 1rem;
+     color: #374151;
+     font-weight: 500;
+     border-radius: 0.5rem;
+     transition: background 0.2s ease, color 0.2s ease;
+   }
+   
+   .nav-item:hover {
+     background: #f3f4f6;
+     color: #2563eb;
+   }
+   
+   .nav-item-active {
+     background: #2563eb;
+     color: #ffffff;
+   }
+   
+   /* Mobile Navigation */
+   .nav-mobile {
+     display: none;
+     flex-direction: column;
+     background: #ffffff;
+     position: absolute;
+     top: 100%;
+     left: 0;
+     width: 100%;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   }
+   
+   @media (max-width: 768px) {
+     .nav-mobile { display: flex; }
+     .nav-desktop { display: none; }
+   }
+   
+   /* ==========================================================================
+      11. Alert Components
+      ========================================================================== */
+   .alert {
+     padding: 1rem 1.5rem;
+     border-radius: 0.5rem;
+     display: flex;
+     align-items: center;
+     gap: 0.75rem;
+     font-size: 0.875rem;
+   }
+   
+   .alert-success {
+     background: #d1fae5;
+     color: #065f46;
+     border: 1px solid #34d399;
+   }
+   
+   .alert-error {
+     background: #fee2e2;
+     color: #991b1b;
+     border: 1px solid #ef4444;
+   }
+   
+   .alert-info {
+     background: #e0f2fe;
+     color: #1e40af;
+     border: 1px solid #3b82f6;
+   }
+   
+   .alert-close {
+     margin-left: auto;
+     background: none;
+     border: none;
+     cursor: pointer;
+     color: inherit;
+   }
+   
+   /* ==========================================================================
+      12. Table Components
+      ========================================================================== */
+   .table {
+     width: 100%;
+     border-collapse: collapse;
+     background: #ffffff;
+     border-radius: 0.5rem;
+     overflow: hidden;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+   }
+   
+   .table th,
+   .table td {
+     padding: 1rem;
+     text-align: left;
+     border-bottom: 1px solid #e5e7eb;
+   }
+   
+   .table th {
+     background: #f9fafb;
+     font-weight: 600;
+     color: #374151;
+   }
+   
+   .table tr:hover {
+     background: #f3f4f6;
+   }
+   
+   /* ==========================================================================
+      13. Custom Gradient Backgrounds
+      ========================================================================== */
+   .bg-gradient-primary {
+     background: linear-gradient(135deg, #2563eb, #7dd3fc);
+   }
+   
+   .bg-gradient-secondary {
+     background: linear-gradient(135deg, #6b7280, #d1d5db);
+   }
+   
+   .bg-gradient-accent {
+     background: linear-gradient(135deg, #f472b6, #f9a8d4);
+   }
+   
+   /* ==========================================================================
+      14. Accessibility Enhancements
+      ========================================================================== */
+   .focus-ring {
+     outline: none;
+     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+   }
+   
+   .sr-only {
+     position: absolute;
+     width: 1px;
+     height: 1px;
+     padding: 0;
+     margin: -1px;
+     overflow: hidden;
+     clip: rect(0, 0, 0, 0);
+     border: 0;
+   }
+   
+   /* ==========================================================================
+      15. Responsive Containers
+      ========================================================================== */
+   .container {
+     width: 100%;
+     max-width: 1280px;
+     margin-left: auto;
+     margin-right: auto;
+     padding-left: 1rem;
+     padding-right: 1rem;
+   }
+   
+   @media (min-width: 640px) {
+     .container { padding-left: 2rem; padding-right: 2rem; }
+   }
+   
+   @media (min-width: 1024px) {
+     .container { padding-left: 4rem; padding-right: 4rem; }
+   }
+   
+   /* ==========================================================================
+      16. Utility Classes
+      ========================================================================== */
+   .rounded-xl { border-radius: 1rem; }
+   .rounded-2xl { border-radius: 1.5rem; }
+   
+   .border-subtle { border: 1px solid #e5e7eb; }
+   .border-bold { border: 2px solid #374151; }
+   
+   .text-muted { color: #6b7280; }
+   .text-accent { color: #db2777; }
+   
+   .bg-overlay {
+     background: rgba(0, 0, 0, 0.4);
+     backdrop-filter: blur(4px);
+   }
+   
+   /* ==========================================================================
+      17. Micro-Interactions
+      ========================================================================== */
+   .interactive-scale {
+     transition: transform 0.2s ease;
+   }
+   
+   .interactive-scale:hover {
+     transform: scale(1.05);
+   }
+   
+   .interactive-rotate {
+     transition: transform 0.3s ease;
+   }
+   
+   .interactive-rotate:hover {
+     transform: rotate(3deg);
+   }
+   
+   /* ==========================================================================
+      18. Custom Theme Colors
+      ========================================================================== */
+   .text-primary-50 { color: #eff6ff; }
+   .text-primary-100 { color: #dbeafe; }
+   .text-primary-200 { color: #bfdbfe; }
+   .text-primary-300 { color: #93c5fd; }
+   .text-primary-400 { color: #60a5fa; }
+   .text-primary-500 { color: #3b82f6; }
+   .text-primary-600 { color: #2563eb; }
+   .text-primary-700 { color: #1d4ed8; }
+   .text-primary-800 { color: #1e40af; }
+   .text-primary-900 { color: #1e3a8a; }
+   
+   .bg-primary-50 { background-color: #eff6ff; }
+   .bg-primary-100 { background-color: #dbeafe; }
+   .bg-primary-200 { background-color: #bfdbfe; }
+   .bg-primary-300 { background-color: #93c5fd; }
+   .bg-primary-400 { background-color: #60a5fa; }
+   .bg-primary-500 { background-color: #3b82f6; }
+   .bg-primary-600 { background-color: #2563eb; }
+   .bg-primary-700 { background-color: #1d4ed8; }
+   .bg-primary-800 { background-color: #1e40af; }
+   .bg-primary-900 { background-color: #1e3a8a; }
+   
+   .border-primary-50 { border-color: #eff6ff; }
+   .border-primary-100 { border-color: #dbeafe; }
+   .border-primary-200 { border-color: #bfdbfe; }
+   .border-primary-300 { border-color: #93c5fd; }
+   .border-primary-400 { border-color: #60a5fa; }
+   .border-primary-500 { border-color: #3b82f6; }
+   .border-primary-600 { border-color: #2563eb; }
+   .border-primary-700 { border-color: #1d4ed8; }
+   .border-primary-800 { border-color: #1e40af; }
+   .border-primary-900 { border-color: #1e3a8a; }
+   
+   /* ==========================================================================
+      19. Custom Z-Index Layers
+      ========================================================================== */
+   .z-overlay { z-index: 100; }
+   .z-modal { z-index: 1000; }
+   .z-toast { z-index: 2000; }
+   .z-tooltip { z-index: 3000; }
+   
+   /* ==========================================================================
+      20. Print Styles
+      ========================================================================== */
+   @media print {
+     .no-print { display: none; }
+     body { background: #ffffff; color: #000000; }
+     .shadow-deep, .shadow-soft { box-shadow: none; }
+   }
+   
+   /* ==========================================================================
+      21. Dark Mode Support
+      ========================================================================== */
+   @media (prefers-color-scheme: dark) {
+     body {
+       background: #1f2937;
+       color: #e5e7eb;
+     }
+   
+     .card { background: #374151; }
+     .btn-primary { background: linear-gradient(135deg, #60a5fa, #93c5fd); }
+     .btn-primary:hover { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
+     .form-input { background: #4b5563; color: #e5e7eb; border-color: #6b7280; }
+     .form-input:focus { border-color: #93c5fd; }
+     .text-muted { color: #9ca3af; }
+   }
